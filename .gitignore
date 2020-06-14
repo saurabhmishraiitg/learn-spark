@@ -5,3 +5,11 @@
 .jupyter/migrated
 .jupyter/nbconfig
 *.ipynb_checkpoints
+
+#Eclipse settings exclusions
+*/bin
+*/.settings
+*/.classpath
+*/.project
+project
+target
