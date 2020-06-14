@@ -1,0 +1,7 @@
+.bash_history
+.local
+.cache
+.ipython
+.jupyter/migrated
+.jupyter/nbconfig
+*.ipynb_checkpoints
