@@ -1,17 +1,17 @@
-package org.nexus.scala.spark.mapr
+package org.nexus.mapr
 
+import com.typesafe.scalalogging.LazyLogging
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, Row, SaveMode, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
-import wvlet.log.LogSupport
 
 import scala.util.Random
 
 /**
  * Trying to read and load a CSV file in DF
  */
-object LoadFlightData extends LogSupport {
+object LoadFlightData extends LazyLogging {
 
   def getSchema(): StructType = {
     new StructType()
@@ -243,7 +243,7 @@ object LoadFlightData extends LogSupport {
   }
 
   def getDFDetails(rawDF: DataFrame): Unit = {
-    warn(s"Count of records in the DF : [${rawDF.count()}]")
+    logger.warn(s"Count of records in the DF : [${rawDF.count()}]")
     //    rawDF.printSchema()
     //    rawDF.show(10)
   }
@@ -256,22 +256,22 @@ object LoadFlightData extends LogSupport {
    */
   def testRDDReduceByGroupBY(rawDF: DataFrame): Unit = {
     val rawRDD = rawDF.rdd.cache()
-    warn(s"RDD count : ${rawRDD.count}")
+    logger.warn(s"RDD count : ${rawRDD.count}")
 
     //Get countBy date using different grouping paradigms
-    warn("groupByKey")
+    logger.warn("groupByKey")
     rawRDD.map(x => (x.getDate(1).toString, 1))
       .groupByKey().map((a) => (a._1, a._2.sum))
       .sortBy(_._1, true, 1)
       .foreach(println)
 
-    warn("reduceByKey")
+    logger.warn("reduceByKey")
     rawRDD.map(x => (x.getDate(1).toString, 1))
       .reduceByKey((x, y) => (x + y))
       .sortBy(_._1, true, 1)
       .foreach(println)
 
-    warn("aggregateByKey")
+    logger.warn("aggregateByKey")
     val initCnt = 0
     val sumCounts = (p1: Int, p2: Int) => p1 + p2
     rawRDD.map(x => (x.getDate(1).toString, 1))
@@ -279,7 +279,7 @@ object LoadFlightData extends LogSupport {
       .sortBy(_._1, true, 1)
       .foreach(println)
 
-    warn("combineByKey")
+    logger.warn("combineByKey")
     rawRDD.map(x => (x.getDate(1).toString, 1))
       .combineByKey((x => 1)
         , ((x: Int, y) => (x + y))
@@ -321,14 +321,14 @@ object LoadFlightData extends LogSupport {
     setLogger()
 
     val startTime = System.currentTimeMillis()
-    info("Hello Scala! ")
+    logger.info("Hello Scala! ")
 
     val sparkConf = getSparkConf()
     val spark = getSparkSession(sparkConf)
     //    generateLargeDataset(spark)
 
-    wvlet.log.Logger.clearAllHandlers
-    wvlet.log.Logger.setDefaultFormatter(wvlet.log.LogFormatter.SourceCodeLogFormatter)
+    //    wvlet.log.Logger.clearAllHandlers
+    //    wvlet.log.Logger.setDefaultFormatter(wvlet.log.LogFormatter.SourceCodeLogFormatter)
 
     val rawDF = readYellowTaxiRawData(spark)
     //    getDFDetails(rawDF)
@@ -342,9 +342,9 @@ object LoadFlightData extends LogSupport {
     val joinDF = childDF1.join(broadcast(childDF2), Seq("vendorId"))
     //    info(joinDF.queryExecution.analyzed.numberedTreeString)
     //    warn(joinDF.queryExecution.logical.numberedTreeString)
-    info(joinDF.queryExecution.optimizedPlan.numberedTreeString)
+    logger.info(joinDF.queryExecution.optimizedPlan.numberedTreeString)
     //    warn(joinDF.queryExecution.withCachedData.numberedTreeString)
-    warn(joinDF.queryExecution.executedPlan.numberedTreeString)
+    logger.warn(joinDF.queryExecution.executedPlan.numberedTreeString)
 
 
 

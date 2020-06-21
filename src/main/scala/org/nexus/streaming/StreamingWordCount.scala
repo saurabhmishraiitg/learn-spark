@@ -1,6 +1,6 @@
 package org.nexus.streaming
 
-import org.nexus.general.Context
+import org.nexus.common.Context
 
 object StreamingWordCount extends App with Context{
 
