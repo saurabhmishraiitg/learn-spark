@@ -1,0 +1,20 @@
+First Console, First start netcast as data server
+nc -lk 50050
+
+Second Console, Lets start the spark streaming application
+spark-submit --class com.learning.spark.streaming.EventTimeExample /home/training/spark-course-examples/target/scala-2.11/spark-course-examples_2.11-1.0.jar
+
+First Console, Now lets start posting 
+1461756862000,"aapl",500.0
+1461756867001,"aapl",600.0
+1461756872000,"aapl",400.0
+1461756874000,"aapl",500.0
+1461756874010,"aapl",600.0
+1589722462000,"aapl",5000
+1589722528000,"aapl",100
+1589722534000,"aapl",200
+1589722534000,"aapl",400
+1589722627450,"aapl",900
+1589722645428,"aapl",300
+1589722645428,"aapl",200
+

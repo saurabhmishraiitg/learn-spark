@@ -1,0 +1,1222 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "val person = Seq(\n    (0, \"Bill Chambers\", 0, Seq(100)),\n    (1, \"Matei Zaharia\", 1, Seq(500, 250, 100)),\n    (2, \"Michael Armbrust\", 1, Seq(250, 100)))\n  .toDF(\"id\", \"name\", \"graduate_program\", \"spark_status\")\nval graduateProgram = Seq(\n    (0, \"Masters\", \"School of Information\", \"UC Berkeley\"),\n    (2, \"Masters\", \"EECS\", \"UC Berkeley\"),\n    (1, \"Ph.D.\", \"EECS\", \"UC Berkeley\"))\n  .toDF(\"id\", \"degree\", \"department\", \"school\")\nval sparkStatus = Seq(\n    (500, \"Vice President\"),\n    (250, \"PMC Member\"),\n    (100, \"Contributor\"))\n  .toDF(\"id\", \"status\")\nperson.createOrReplaceTempView(\"person\")\ngraduateProgram.createOrReplaceTempView(\"graduateProgram\")\nsparkStatus.createOrReplaceTempView(\"sparkStatus\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:39:43+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n| id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n|  2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|  1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\n\u001b[1m\u001b[34mperson\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id: int, name: string ... 2 more fields]\n\u001b[1m\u001b[34mgraduateProgram\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id: int, degree: string ... 2 more fields]\n\u001b[1m\u001b[34msparkStatus\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [id: int, status: string]\n\u001b[1m\u001b[34mjoinExpression\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Column\u001b[0m = (graduate_program = id)\n\u001b[1m\u001b[34mjoinType\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = inner\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=0",
+              "$$hashKey": "object:52270"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=1",
+              "$$hashKey": "object:52271"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001574497_1158426030",
+      "id": "paragraph_1590001574497_1158426030",
+      "dateCreated": "2020-05-21T00:36:14+0530",
+      "dateStarted": "2020-05-21T00:36:52+0530",
+      "dateFinished": "2020-05-21T00:37:05+0530",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:51607"
+    },
+    {
+      "text": "joinType",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:39:26+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres1\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = inner\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001757885_-589093600",
+      "id": "paragraph_1590001757885_-589093600",
+      "dateCreated": "2020-05-21T00:39:17+0530",
+      "dateStarted": "2020-05-21T00:39:26+0530",
+      "dateFinished": "2020-05-21T00:39:26+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51608"
+    },
+    {
+      "text": "%sql\nselect * from person",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:38:20+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "name": "string",
+                      "graduate_program": "string",
+                      "spark_status": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tname\tgraduate_program\tspark_status\n0\tBill Chambers\t0\tWrappedArray(100)\n1\tMatei Zaharia\t1\tWrappedArray(500, 250, 100)\n2\tMichael Armbrust\t1\tWrappedArray(250, 100)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001612867_2050889196",
+      "id": "paragraph_1590001612867_2050889196",
+      "dateCreated": "2020-05-21T00:36:52+0530",
+      "dateStarted": "2020-05-21T00:38:20+0530",
+      "dateFinished": "2020-05-21T00:38:20+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51609"
+    },
+    {
+      "text": "%sql\nselect * from graduateProgram",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:38:35+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "degree": "string",
+                      "department": "string",
+                      "school": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tdegree\tdepartment\tschool\n0\tMasters\tSchool of Information\tUC Berkeley\n2\tMasters\tEECS\tUC Berkeley\n1\tPh.D.\tEECS\tUC Berkeley\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001700218_305702795",
+      "id": "paragraph_1590001700218_305702795",
+      "dateCreated": "2020-05-21T00:38:20+0530",
+      "dateStarted": "2020-05-21T00:38:35+0530",
+      "dateFinished": "2020-05-21T00:38:35+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51610"
+    },
+    {
+      "text": "%sql\nselect * from sparkStatus",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:39:14+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "status": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tstatus\n500\tVice President\n250\tPMC Member\n100\tContributor\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001715423_-381925319",
+      "id": "paragraph_1590001715423_-381925319",
+      "dateCreated": "2020-05-21T00:38:35+0530",
+      "dateStarted": "2020-05-21T00:39:14+0530",
+      "dateFinished": "2020-05-21T00:39:14+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51611"
+    },
+    {
+      "text": "%md\nInner Join\n=================\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:41:12+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Inner Join</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001810760_795983405",
+      "id": "paragraph_1590001810760_795983405",
+      "dateCreated": "2020-05-21T00:40:10+0530",
+      "dateStarted": "2020-05-21T00:41:12+0530",
+      "dateFinished": "2020-05-21T00:41:12+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51612"
+    },
+    {
+      "text": "\nval joinExpression = person.col(\"graduate_program\") === graduateProgram.col(\"id\")\nperson.join(graduateProgram, joinExpression).show()\nvar joinType = \"inner\"\nperson.join(graduateProgram, joinExpression, joinType).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:41:39+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n| id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n|  2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|  1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n| id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n|  2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|  1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\n\u001b[1m\u001b[34mjoinExpression\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Column\u001b[0m = (graduate_program = id)\n\u001b[1m\u001b[34mjoinType\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = inner\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=4",
+              "$$hashKey": "object:52709"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=5",
+              "$$hashKey": "object:52710"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=6",
+              "$$hashKey": "object:52711"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=7",
+              "$$hashKey": "object:52712"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001754088_712194280",
+      "id": "paragraph_1590001754088_712194280",
+      "dateCreated": "2020-05-21T00:39:14+0530",
+      "dateStarted": "2020-05-21T00:41:39+0530",
+      "dateFinished": "2020-05-21T00:41:40+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51613"
+    },
+    {
+      "text": "%md\nOuter Join\n========================\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:42:25+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Outer Join</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001801458_-1504464639",
+      "id": "paragraph_1590001801458_-1504464639",
+      "dateCreated": "2020-05-21T00:40:01+0530",
+      "dateStarted": "2020-05-21T00:42:25+0530",
+      "dateFinished": "2020-05-21T00:42:25+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51614"
+    },
+    {
+      "text": "joinType = \"outer\"\nperson.join(graduateProgram, joinExpression, joinType).show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:42:39+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|   1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|   2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|null|            null|            null|           null|  2|Masters|                EECS|UC Berkeley|\n|   0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\njoinType: String = outer\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=8",
+              "$$hashKey": "object:52830"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=9",
+              "$$hashKey": "object:52831"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=10",
+              "$$hashKey": "object:52832"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=11",
+              "$$hashKey": "object:52833"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=12",
+              "$$hashKey": "object:52834"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001945407_1764730161",
+      "id": "paragraph_1590001945407_1764730161",
+      "dateCreated": "2020-05-21T00:42:25+0530",
+      "dateStarted": "2020-05-21T00:42:39+0530",
+      "dateFinished": "2020-05-21T00:42:42+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51615"
+    },
+    {
+      "text": "%md\nLeft Outer Join\n==================",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:43:21+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Left Outer Join</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590001959787_255323758",
+      "id": "paragraph_1590001959787_255323758",
+      "dateCreated": "2020-05-21T00:42:39+0530",
+      "dateStarted": "2020-05-21T00:43:21+0530",
+      "dateFinished": "2020-05-21T00:43:21+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51616"
+    },
+    {
+      "text": "joinType = \"left_outer\"\nperson.join(graduateProgram, joinExpression, joinType).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:43:31+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n| id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n|  1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|  2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n+---+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\njoinType: String = left_outer\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=13",
+              "$$hashKey": "object:52956"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=14",
+              "$$hashKey": "object:52957"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002001242_1947586586",
+      "id": "paragraph_1590002001242_1947586586",
+      "dateCreated": "2020-05-21T00:43:21+0530",
+      "dateStarted": "2020-05-21T00:43:31+0530",
+      "dateFinished": "2020-05-21T00:43:31+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51617"
+    },
+    {
+      "text": "%md\nRight Outer Join\n==================",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:44:00+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Right Outer Join</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002011272_-601029553",
+      "id": "paragraph_1590002011272_-601029553",
+      "dateCreated": "2020-05-21T00:43:31+0530",
+      "dateStarted": "2020-05-21T00:44:00+0530",
+      "dateFinished": "2020-05-21T00:44:00+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51618"
+    },
+    {
+      "text": "joinType = \"right_outer\"\nperson.join(graduateProgram, joinExpression, joinType).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:44:16+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|  id|            name|graduate_program|   spark_status| id| degree|          department|     school|\n+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n|   0|   Bill Chambers|               0|          [100]|  0|Masters|School of Informa...|UC Berkeley|\n|null|            null|            null|           null|  2|Masters|                EECS|UC Berkeley|\n|   2|Michael Armbrust|               1|     [250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n|   1|   Matei Zaharia|               1|[500, 250, 100]|  1|  Ph.D.|                EECS|UC Berkeley|\n+----+----------------+----------------+---------------+---+-------+--------------------+-----------+\n\njoinType: String = right_outer\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=17",
+              "$$hashKey": "object:53067"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=18",
+              "$$hashKey": "object:53068"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002040355_-632387707",
+      "id": "paragraph_1590002040355_-632387707",
+      "dateCreated": "2020-05-21T00:44:00+0530",
+      "dateStarted": "2020-05-21T00:44:16+0530",
+      "dateFinished": "2020-05-21T00:44:16+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51619"
+    },
+    {
+      "text": "%md\nLeft Semi Join\n=====================",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:46:04+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Left Semi Join</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002044962_1073031740",
+      "id": "paragraph_1590002044962_1073031740",
+      "dateCreated": "2020-05-21T00:44:04+0530",
+      "dateStarted": "2020-05-21T00:46:04+0530",
+      "dateFinished": "2020-05-21T00:46:04+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51620"
+    },
+    {
+      "text": "joinType = \"left_semi\"\ngraduateProgram.join(person, joinExpression, joinType).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:46:21+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+-------+--------------------+-----------+\n| id| degree|          department|     school|\n+---+-------+--------------------+-----------+\n|  0|Masters|School of Informa...|UC Berkeley|\n|  1|  Ph.D.|                EECS|UC Berkeley|\n+---+-------+--------------------+-----------+\n\njoinType: String = left_semi\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=19",
+              "$$hashKey": "object:53178"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=20",
+              "$$hashKey": "object:53179"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002164521_570372728",
+      "id": "paragraph_1590002164521_570372728",
+      "dateCreated": "2020-05-21T00:46:04+0530",
+      "dateStarted": "2020-05-21T00:46:21+0530",
+      "dateFinished": "2020-05-21T00:46:21+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51621"
+    },
+    {
+      "text": "%sql\nselect * from graduateProgram where id in (select graduate_program from person)",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:46:58+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "id": "string",
+                      "degree": "string",
+                      "department": "string",
+                      "school": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "id\tdegree\tdepartment\tschool\n0\tMasters\tSchool of Information\tUC Berkeley\n1\tPh.D.\tEECS\tUC Berkeley\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=21",
+              "$$hashKey": "object:53281"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=22",
+              "$$hashKey": "object:53282"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002181565_-402581259",
+      "id": "paragraph_1590002181565_-402581259",
+      "dateCreated": "2020-05-21T00:46:21+0530",
+      "dateStarted": "2020-05-21T00:46:57+0530",
+      "dateFinished": "2020-05-21T00:46:57+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51622"
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.expr\n\nperson.withColumnRenamed(\"id\", \"personId\")\n  .join(sparkStatus, expr(\"array_contains(spark_status, id)\")).show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:48:30+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------------+----------------+---------------+---+--------------+\n|personId|            name|graduate_program|   spark_status| id|        status|\n+--------+----------------+----------------+---------------+---+--------------+\n|       0|   Bill Chambers|               0|          [100]|100|   Contributor|\n|       1|   Matei Zaharia|               1|[500, 250, 100]|500|Vice President|\n|       1|   Matei Zaharia|               1|[500, 250, 100]|250|    PMC Member|\n|       1|   Matei Zaharia|               1|[500, 250, 100]|100|   Contributor|\n|       2|Michael Armbrust|               1|     [250, 100]|250|    PMC Member|\n|       2|Michael Armbrust|               1|     [250, 100]|100|   Contributor|\n+--------+----------------+----------------+---------------+---+--------------+\n\nimport org.apache.spark.sql.functions.expr\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=23",
+              "$$hashKey": "object:53344"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=24",
+              "$$hashKey": "object:53345"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002217273_929103277",
+      "id": "paragraph_1590002217273_929103277",
+      "dateCreated": "2020-05-21T00:46:57+0530",
+      "dateStarted": "2020-05-21T00:48:30+0530",
+      "dateFinished": "2020-05-21T00:48:31+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51623"
+    },
+    {
+      "text": "%sql\nSELECT * FROM\n  (select id as personId, name, graduate_program, spark_status FROM person)\n  INNER JOIN sparkStatus ON array_contains(spark_status, id)",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:48:45+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "personId": "string",
+                      "name": "string",
+                      "graduate_program": "string",
+                      "spark_status": "string",
+                      "id": "string",
+                      "status": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "personId\tname\tgraduate_program\tspark_status\tid\tstatus\n0\tBill Chambers\t0\tWrappedArray(100)\t100\tContributor\n1\tMatei Zaharia\t1\tWrappedArray(500, 250, 100)\t500\tVice President\n1\tMatei Zaharia\t1\tWrappedArray(500, 250, 100)\t250\tPMC Member\n1\tMatei Zaharia\t1\tWrappedArray(500, 250, 100)\t100\tContributor\n2\tMichael Armbrust\t1\tWrappedArray(250, 100)\t250\tPMC Member\n2\tMichael Armbrust\t1\tWrappedArray(250, 100)\t100\tContributor\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=25",
+              "$$hashKey": "object:53447"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=26",
+              "$$hashKey": "object:53448"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002310753_1157231765",
+      "id": "paragraph_1590002310753_1157231765",
+      "dateCreated": "2020-05-21T00:48:30+0530",
+      "dateStarted": "2020-05-21T00:48:44+0530",
+      "dateFinished": "2020-05-21T00:48:44+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51624"
+    },
+    {
+      "text": "%md\nHandling the duplicate column names in table\n==============================================",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:51:07+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Handling the duplicate column names in table</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002418976_-665037331",
+      "id": "paragraph_1590002418976_-665037331",
+      "dateCreated": "2020-05-21T00:50:18+0530",
+      "dateStarted": "2020-05-21T00:51:07+0530",
+      "dateFinished": "2020-05-21T00:51:07+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51625"
+    },
+    {
+      "text": "val gradProgramDupe = graduateProgram.withColumnRenamed(\"id\", \"graduate_program\")\nperson.join(gradProgramDupe, person(\"graduate_program\") === gradProgramDupe(\"graduate_program\")).show()",
+      "user": "anonymous",
+      "dateUpdated": "2020-05-21T00:50:14+0530",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+----------------+----------------+---------------+----------------+-------+--------------------+-----------+\n| id|            name|graduate_program|   spark_status|graduate_program| degree|          department|     school|\n+---+----------------+----------------+---------------+----------------+-------+--------------------+-----------+\n|  0|   Bill Chambers|               0|          [100]|               0|Masters|School of Informa...|UC Berkeley|\n|  2|Michael Armbrust|               1|     [250, 100]|               1|  Ph.D.|                EECS|UC Berkeley|\n|  1|   Matei Zaharia|               1|[500, 250, 100]|               1|  Ph.D.|                EECS|UC Berkeley|\n+---+----------------+----------------+---------------+----------------+-------+--------------------+-----------+\n\n\u001b[1m\u001b[34mgradProgramDupe\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [graduate_program: int, degree: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=27",
+              "$$hashKey": "object:53558"
+            },
+            {
+              "jobUrl": "http://guestusers-mbp:4041/jobs/job?id=28",
+              "$$hashKey": "object:53559"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002324836_1799228495",
+      "id": "paragraph_1590002324836_1799228495",
+      "dateCreated": "2020-05-21T00:48:44+0530",
+      "dateStarted": "2020-05-21T00:50:14+0530",
+      "dateFinished": "2020-05-21T00:50:14+0530",
+      "status": "FINISHED",
+      "$$hashKey": "object:51626"
+    },
+    {
+      "user": "anonymous",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1590002414012_-954146901",
+      "id": "paragraph_1590002414012_-954146901",
+      "dateCreated": "2020-05-21T00:50:14+0530",
+      "status": "READY",
+      "$$hashKey": "object:51627"
+    }
+  ],
+  "name": "Joins_By_Example",
+  "id": "2F998GKDY",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Joins_By_Example"
+}
