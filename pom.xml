@@ -4,12 +4,15 @@
 
     <name>learn-spark</name>
     <description>spark learning source code</description>
+    <modules>
+        <module>presto-integration</module>
+    </modules>
 
     <groupId>org.nexus</groupId>
     <artifactId>learn-spark</artifactId>
     <version>0.1-SNAPSHOT</version>
 
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
