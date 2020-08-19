@@ -1,15 +1,12 @@
-package org.nexus.wordcount
+package org.nexus
 
 import java.nio.file.{Files, Paths}
 
 import org.apache.commons.io.FileUtils
-import org.nexus.common.Context
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
 
-/**
- * Word Count
- */
-case object WordCount extends App with Context {
-
+object WordCount extends App with CommonSparkContext {
   println(args.toList)
   // Check file exists
   println(Files.exists(Paths.get("data/wordcount-input.txt")))
@@ -19,7 +16,7 @@ case object WordCount extends App with Context {
   FileUtils.deleteDirectory(FileUtils.getFile("data/wordcount-output2"))
 
   // Word Count using RDD
-  val textFile = spark.sparkContext.textFile("data/wordcount-input.txt")
+  val textFile = sc.textFile("data/wordcount-input.txt")
   val counts = textFile.flatMap(line => line.split(" "))
     .map(word => (word, 1))
     .reduceByKey(_ + _)

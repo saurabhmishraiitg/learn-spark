@@ -25,4 +25,9 @@ Commonly used syntax examples/snippets in both Python/Scala
   - `spark-shell --driver-memory 4g`
   - `spark-sql --driver-memory 4g`
   - You can check that the properties have reflected in the session by going to the GUI `Configurations` tab
+- Sample spark-examples program to test spark on a cluster
+  - SparkPi : Calculates the value of `pi` to given degree of precision. Requires no input / output path
+    - `spark-submit --class org.apache.spark.examples.SparkPi --master yarn --deploy-mode client /usr/hdp/2.6.5.0-292/spark2/examples/jars/spark-examples_2.11-2.3.0.2.6.5.0-292.jar 10`
+  - WordCount : Takes input path and prints wordcount on console
+    - `spark-submit --class org.apache.spark.examples.JavaWordCount --master yarn --deploy-mode client /usr/hdp/2.6.5.0-292/spark2/examples/jars/spark-examples_2.11-2.3.0.2.6.5.0-292.jar <input_path>`
   

@@ -148,9 +148,12 @@ object LoadFlightData extends LazyLogging {
    */
   def simpleWCDF(spark: SparkSession): Unit = {
     val rawDF = spark.read.textFile("/Users/xxx/Desktop/utility/alluxio/alluxio-2.1.0/LICENSE")
-    import org.apache.spark.sql.functions._
 
-    rawDF.explode("value", "word")((x: String) => x.trim.split(" "))
+    import org.apache.spark.sql.functions._
+    import spark.sqlContext.implicits._
+
+    rawDF.flatMap(x => x.trim.split(" "))
+      //    rawDF.explode("value", "word")((x: String) => x.trim.split(" "))
       .groupBy("word")
       .count()
       .orderBy(desc("count"))
@@ -160,9 +163,10 @@ object LoadFlightData extends LazyLogging {
 
 
     //Alternate without using 'explode'
-    import org.apache.spark.sql.functions._
-    import spark.implicits._
-    rawDF.select("value").flatMap((row: Row) => row.getString(0).trim.split(" ")).withColumnRenamed("value", "word").groupBy("word").count().orderBy(desc("count")).take(5).foreach(println)
+    rawDF.select("value").flatMap((row: Row) => row.getString(0).trim.split(" "))
+      .withColumnRenamed("value", "word")
+      .groupBy("word").count().orderBy(desc("count"))
+      .take(5).foreach(println)
   }
 
   /**
@@ -347,9 +351,8 @@ object LoadFlightData extends LazyLogging {
     logger.warn(joinDF.queryExecution.executedPlan.numberedTreeString)
 
 
-
     val endTime = System.currentTimeMillis()
-    error(s"Bye Scala! runtTime : ${(endTime - startTime) / 1000}")
+    sys.error(s"Bye Scala! runtTime : ${(endTime - startTime) / 1000}")
     //    Thread.sleep(100000)
   }
 }
