@@ -40,6 +40,12 @@
             <version>${spark.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_${scala.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>commons-codec</groupId>-->
 <!--            <artifactId>commons-codec</artifactId>-->

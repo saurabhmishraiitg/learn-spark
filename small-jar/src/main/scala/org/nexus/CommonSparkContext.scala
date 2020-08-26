@@ -14,6 +14,7 @@ trait CommonSparkContext {
 
   lazy val spark = SparkSession
     .builder()
+    .enableHiveSupport()
     .config(sparkConf)
     .getOrCreate()
 

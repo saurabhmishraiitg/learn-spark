@@ -16,3 +16,7 @@ target
 
 .idea
 *.iml
+
+data
+spark-warehouse
+metastore_db
