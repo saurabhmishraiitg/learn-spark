@@ -9,6 +9,7 @@ import scala.util.Random
 /**
  * Sample Data Generator
  * Params : input_path, output_path, generation_ratio, output_format, yarn_mode
+ * #TODO : Need to optimize. Currently taking ~15m for 2M records
  */
 object SampleDataGenerator extends App {
 
@@ -32,17 +33,25 @@ object SampleDataGenerator extends App {
 
   val input_path = args(0)
   val output_path = args(1)
-  val generation_ratio = args(2).toInt
+//  val generation_ratio = args(2).toInt
   val output_format = args(3)
   val yarn_mode = args(4)
+  val exec_mem = args(5)
+  val exec_cnt = args(6)
+  val exec_core_cnt = args(7)
 
   val sparkConf = new SparkConf()
     //    .setMaster("local[*]")
     .setMaster(yarn_mode)
     .setAppName("sample-data-generator")
-    .set("spark.cores.max", "2")
+//    .set("spark.cores.max", "2")
     // Skip _SUCCESS files created when writing to disk
     .set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
+    //    .set("spark.dynamicAllocation.enabled", "true")
+    .set("spark.executor.memory", exec_mem)
+    .set("spark.executor.instances", exec_cnt)
+    .set("spark.executor.cores", exec_core_cnt)
+
 
   val spark = SparkSession
     .builder()
@@ -109,11 +118,12 @@ object SampleDataGenerator extends App {
   }
 
   //  val broadcast_gen_ratio = spark.sparkContext.broadcast(generation_ratio)
+
   import spark.implicits._
 
-  val inputDF = spark.read.text(input_path)
+  val inputDF = spark.read.text(input_path).repartition(numPartitions = exec_cnt.toInt)
 
-  val outputDF = inputDF.flatMap(_ => generate_rows(generation_ratio))
+  val outputDF = inputDF.flatMap(_ => generate_rows(200000))
 
   val outputDFRenamed = outputDF.withColumnRenamed("_1", "ssn")
     .withColumnRenamed("_2", "age")
