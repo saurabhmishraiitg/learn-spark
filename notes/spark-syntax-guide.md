@@ -30,4 +30,11 @@ Commonly used syntax examples/snippets in both Python/Scala
     - `spark-submit --class org.apache.spark.examples.SparkPi --master yarn --deploy-mode client /usr/hdp/2.6.5.0-292/spark2/examples/jars/spark-examples_2.11-2.3.0.2.6.5.0-292.jar 10`
   - WordCount : Takes input path and prints wordcount on console
     - `spark-submit --class org.apache.spark.examples.JavaWordCount --master yarn --deploy-mode client /usr/hdp/2.6.5.0-292/spark2/examples/jars/spark-examples_2.11-2.3.0.2.6.5.0-292.jar <input_path>`
+- Start a `spark-shell` or `spark-sql` client in CLIENT mode
+  - Setting the queue
+  - Setting the job name in YARN
+  - Setting the driver memory
+  - Setting the deploy-mode
+  - Setting the log file to control the log verbosity
+  - `spark-shell --files /u/users/$USER/log4j.properties --master yarn --deploy-mode client --driver-java-options \"-Dlog4j.configuration=file:/u/users/$USER/log4j.properties\" --driver-memory 4g --name \"spark-shell-debug\" --queue ggdataload`
   

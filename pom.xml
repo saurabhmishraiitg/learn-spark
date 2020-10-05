@@ -7,6 +7,7 @@
     <modules>
         <module>presto-integration</module>
         <module>small-jar</module>
+        <module>spark-kerberos-connect</module>
     </modules>
 
     <groupId>org.nexus</groupId>
