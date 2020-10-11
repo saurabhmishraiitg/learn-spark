@@ -13,6 +13,8 @@
 */.project
 project
 target
+.settings
+.project
 
 .idea
 *.iml
