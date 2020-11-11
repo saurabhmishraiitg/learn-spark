@@ -1,12 +1,15 @@
-package org.nexus.jdbc
+package org.nexus.knox
 
 import com.typesafe.scalalogging.Logger
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
-object SparkJDBCIO {
+/**
+ * Read data from a remote kerberized cluster using Spark JDBC over Knox server connection
+ */
+object SparkKnoxJDBC {
 
-  val logger: Logger = Logger("SparkJDBCIO")
+  val logger: Logger = Logger("SparkKnoxJDBC")
 
   /**
    * Main method.
@@ -14,9 +17,8 @@ object SparkJDBCIO {
    * @param args args
    */
   def main(args: Array[String]): Unit = {
-    logger.info("SparkJDBCIO Program started")
+    logger.info("SparkKnoxJDBC Program started")
 
-    testLocalMySQLJDBC()
   }
 
   /**
@@ -37,14 +39,13 @@ object SparkJDBCIO {
     val df1 = getSparkSession.read.format("jdbc")
       .option("url", s"jdbc:mysql://${hostname}:${port}/${database}?autoReconnect=true")
       //      .option("driver", "com.mysql.jdbc.Driver")
-      .option("driver", "com.mysql.cj.jdbc.Driver") // Using mysql-connection v8.0.22
+      .option("driver", "com.mysql.cj.jdbc.Driver")
       .option("dbtable", "(SELECT * FROM tbl1 limit 3) AS my_table")
       .option("user", username)
       .option("password", password).load()
 
     df1.show()
   }
-
 
   /**
    * Get instance of spark session for usage

@@ -14,7 +14,10 @@
         </encoder>
     </appender>
 
-    <root level="debug">
+    <logger name="org.apache" level="WARN" />
+    <logger name="org.spark_project" level="WARN" />
+
+    <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

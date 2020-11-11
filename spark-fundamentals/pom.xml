@@ -7,7 +7,7 @@
   <name>${project.artifactId}</name>
 
   <description>Spark Fundamentals</description>
-  <inceptionYear>2018</inceptionYear>
+  <inceptionYear>2020</inceptionYear>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -16,7 +16,10 @@
     <org.slf4j.version>1.7.5</org.slf4j.version>
     <scala.version>2.11.12</scala.version>
     <scala.compat.version>2.11</scala.compat.version>
-    <spark.version>2.3.2</spark.version>
+    <spark.version>2.2.0</spark.version>
+    <scala.logging.version>3.9.2</scala.logging.version>
+    <logback.classic.version>1.2.3</logback.classic.version>
+    <mysql.connector.version>8.0.22</mysql.connector.version>
   </properties>
 
   <dependencies>
@@ -26,11 +29,19 @@
       <version>${scala.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+    <!-- logging libraries -->
+    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${org.slf4j.version}</version>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.classic.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging -->
+    <dependency>
+      <groupId>com.typesafe.scala-logging</groupId>
+      <artifactId>scala-logging_${scala.compat.version}</artifactId>
+      <version>${scala.logging.version}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
@@ -41,8 +52,8 @@
       <!--            <scope>provided</scope>-->
       <exclusions>
         <exclusion>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -54,26 +65,10 @@
       <version>${spark.version}</version>
       <exclusions>
         <exclusion>
-          <groupId>log4j</groupId>
-          <artifactId>log4j</artifactId>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-
-    <!-- To Leverage scala-logging successfully in your project -->
-    <!-- https://stackoverflow.com/questions/29065603/complete-scala-logging-example/32003907#32003907 -->
-    <!-- https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging -->
-    <dependency>
-      <groupId>com.typesafe.scala-logging</groupId>
-      <artifactId>scala-logging_2.11</artifactId>
-      <version>3.9.2</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
     </dependency>
 
     <dependency>
@@ -99,6 +94,14 @@
       <artifactId>scala-swing_${scala.compat.version}</artifactId>
       <version>1.0.2</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.connector.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>

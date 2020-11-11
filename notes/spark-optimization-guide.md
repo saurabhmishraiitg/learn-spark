@@ -17,7 +17,6 @@ This page attempts to list Spark Optimization considerations in Production envir
 
 ## Memory Tuning Parameters/Configuration
 
-
 ## Programming Tips
 
 - Use `reduceByKey`, `aggregateByKey`, `combineByKey` **INSTEAD OF** `groupByKey`
@@ -34,4 +33,3 @@ This page attempts to list Spark Optimization considerations in Production envir
   - When using UDFs `Catalyst` is unable to implement optimizations such as Predicate Pushdown, Constant Folding etc. on the data -> [Reference](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-udfs-blackbox.html)
   - [Comparison](https://stackoverflow.com/a/49103325/5679728)
 - Check that your queries are leveraging `Predicate Pushdown` >> [Predicate Pushdown](spark-concepts.md#predicate-pushdown)
-  
