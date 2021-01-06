@@ -12,14 +12,14 @@ Concepts and Principles for Spark development
 
 ### Dynamic Allocation
 
-`Dynamic allocation` allows Spark to dynamically scale the cluster resources allocated to your application based on the workload. When dynamic allocation is enabled and a Spark application has a backlog of pending tasks, it can request executors. When the application becomes idle, its executors are released and can be acquired by other applications. 
+`Dynamic allocation` allows Spark to dynamically scale the cluster resources allocated to your application based on the workload. When dynamic allocation is enabled and a Spark application has a backlog of pending tasks, it can request executors. When the application becomes idle, its executors are released and can be acquired by other applications.
 
 - To enable this feature use the following configuration settings \
 `spark.dynamicAllocation.enabled` = `true`
 
 - To set the initial number of executors \
-  - `spark.dynamicAllocation.initialExecutors` 
-  - The initial number of executors for a Spark application when dynamic allocation is enabled. If `spark.executor.instances` (or its equivalent command-line argument, `--num-executors`) is set to a higher number, that number is used instead. 
+  - `spark.dynamicAllocation.initialExecutors`
+  - The initial number of executors for a Spark application when dynamic allocation is enabled. If `spark.executor.instances` (or its equivalent command-line argument, `--num-executors`) is set to a higher number, that number is used instead.
 
 - `spark.dynamicAllocation.minExecutors` : The lower bound for the number of executors
 - `spark.dynamicAllocation.maxExecutors` : The upper bound for the number of executors
