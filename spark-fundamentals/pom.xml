@@ -72,6 +72,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.apache.hive</groupId>
+      <artifactId>hive-jdbc</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-catalyst_${scala.compat.version}</artifactId>
       <version>${spark.version}</version>
@@ -101,26 +107,6 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql.connector.version}</version>
     </dependency>
-
-<!--    <dependency>-->
-<!--      <groupId>com.google.cloud.bigdataoss</groupId>-->
-<!--      <artifactId>gcs-connector</artifactId>-->
-<!--      <version>hadoop2-1.9.17</version>-->
-<!--      <exclusions>-->
-<!--        <exclusion>-->
-<!--          <groupId>javax.jms</groupId>-->
-<!--          <artifactId>jms</artifactId>-->
-<!--        </exclusion>-->
-<!--        <exclusion>-->
-<!--          <groupId>com.sun.jdmk</groupId>-->
-<!--          <artifactId>jmxtools</artifactId>-->
-<!--        </exclusion>-->
-<!--        <exclusion>-->
-<!--          <groupId>com.sun.jmx</groupId>-->
-<!--          <artifactId>jmxri</artifactId>-->
-<!--        </exclusion>-->
-<!--      </exclusions>-->
-<!--    </dependency>-->
 
     <!-- https://mvnrepository.com/artifact/com.google.cloud.bigdataoss/gcs-connector -->
     <dependency>
