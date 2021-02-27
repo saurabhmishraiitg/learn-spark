@@ -56,6 +56,7 @@
           <artifactId>slf4j-log4j12</artifactId>
         </exclusion>
       </exclusions>
+      <scope>provided</scope>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
@@ -69,12 +70,14 @@
           <artifactId>slf4j-log4j12</artifactId>
         </exclusion>
       </exclusions>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.hive</groupId>
       <artifactId>hive-jdbc</artifactId>
       <version>1.1.1</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -120,18 +123,43 @@
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-mapreduce-client-core</artifactId>
       <version>[2.7.2]</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-common</artifactId>
       <version>[2.7.2]</version>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>[2.4]</version>
+    </dependency>
+
+    <!-- Working with Alluxio Mount path-->
+    <dependency>
+      <groupId>org.alluxio</groupId>
+      <artifactId>alluxio-shaded-client</artifactId>
+      <version>2.4.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Testing Framework -->
+    <dependency>
+      <groupId>org.scalactic</groupId>
+      <artifactId>scalactic_2.11</artifactId>
+      <version>3.2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_2.11</artifactId>
+      <version>3.2.0</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
