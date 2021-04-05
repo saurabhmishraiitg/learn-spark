@@ -1,9 +1,9 @@
 package org.nexus.io
 
 import com.typesafe.scalalogging.Logger
-import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.FlatSpec
 
-class SparkParquetIOSpec extends AnyFlatSpec {
+class SparkParquetIOSpec extends FlatSpec {
 
   val logger: Logger = Logger("SparkParquetIOSpec")
 

@@ -11,16 +11,16 @@ import java.util.Properties
 object ConfigurationManager {
 
   /**
-    * To make life simpler, we will expect the file to be present in the user's HOME location
-    * File name local-ccm.prop
-    * Data addition to the file will be manual
-    * Configuration entries in the file will be key-value based
-    * Benefit of this approach over any other complex Central Configuration Management, is in terms of
-    * having no external dependency
-    */
+   * To make life simpler, we will expect the file to be present in the user's HOME location
+   * File name local-ccm.prop
+   * Data addition to the file will be manual
+   * Configuration entries in the file will be key-value based
+   * Benefit of this approach over any other complex Central Configuration Management, is in terms of
+   * having no external dependency
+   */
 
   // Get the file location and check if the file exists or not.
-  val ccmFilePath = sys.env("HOME") + "/local-ccm.prop"
+  val ccmFilePath: String = sys.env("HOME") + "/local-ccm.prop"
 
   /*
   Check if the CCM file exists or not. If not, then create an empty file.
@@ -33,7 +33,7 @@ object ConfigurationManager {
   Get the value corresponding to the key.
    */
   def getConfiguration(keyName: String): String = {
-    checkAndCreateIfNotExists
+    checkAndCreateIfNotExists()
 
     // Load the CCM file
     val properties = new Properties()
