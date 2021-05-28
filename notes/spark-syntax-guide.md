@@ -48,3 +48,23 @@ Commonly used syntax examples/snippets in both Python/Scala
   table = "DPSTTHRT.TABLE_NAME"
   df = spark.read.jdbc(url=url, table=table, properties=prop)
   ```
+
+- `EXAMPLE` for getting started
+
+```scala
+import spark.implicits._
+val columns = Seq("language","users_count")
+val data = Seq(("Java", "20000"), ("Python", "100000"), ("Scala", "3000"))
+
+val rdd = spark.sparkContext.parallelize(data)
+
+val dfFromRDD1 = rdd.toDF()
+dfFromRDD1.printSchema()
+
+val dfFromRDD2 = rdd.toDF("language","users_count")
+dfFromRDD2.printSchema()
+
+dfFromRDD2.createOrReplaceTempView("people")
+
+spark.sql("select * from people").show()
+```
