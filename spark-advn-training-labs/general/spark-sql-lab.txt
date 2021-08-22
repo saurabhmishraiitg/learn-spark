@@ -1,6 +1,0 @@
-val df = spark.read.option("header",true).option("inferschema",true)\
-    .csv("spark-lab/Labs/spark-course-examples/src/main/resources/applestock.csv")
-
-df.printSchema()df.registerTempTable("applestock")
-spark.sql("select * from applestock").show()
-spark.sql("select * from applestock”).count()
