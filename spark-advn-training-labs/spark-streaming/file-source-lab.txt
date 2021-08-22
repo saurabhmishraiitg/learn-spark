@@ -1,0 +1,13 @@
+First Console, Check the /tmp/input folder is empty 
+ls /tmp/input
+
+Second Console, Start the spark streaming job to look for any new files /tmp/input
+spark-submit --class com.learning.spark.streaming.FileStreamExample /home/training/spark-course-examples/target/scala-2.11/spark-course-examples_2.11-1.0.jar
+
+Now in First Console, Copy a file to see Spark Streaming will pick it or not.
+cp /home/training/spark-course-examples/src/main/resources/sales.csv /tmp/input
+
+After few seconds lets copy the second file
+cp /home/training/spark-course-examples/src/main/resources/sales1.csv /tmp/input
+
+

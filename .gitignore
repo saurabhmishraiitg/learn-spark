@@ -1,0 +1,25 @@
+.bash_history
+.local
+.cache
+.ipython
+.jupyter/migrated
+.jupyter/nbconfig
+*.ipynb_checkpoints
+
+#Eclipse settings exclusions
+*/bin
+*/.settings
+*/.classpath
+*/.project
+project
+target
+.settings
+.project
+
+.idea
+*.iml
+
+data
+spark-warehouse
+metastore_db
+derby.log

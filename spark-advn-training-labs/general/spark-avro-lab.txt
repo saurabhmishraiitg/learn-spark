@@ -1,0 +1,29 @@
+Start the spark-shell
+spark-shell --packages org.apache.spark:spark-avro_2.11:2.4.4
+
+Now try running the below code
+import org.apache.spark.sql.functions._
+val df = spark.read.format("avro").load("/Users/pranabh/spark-labs/avro_files")
+df.select("first_name","gender").show()
+df.filter($"gender" === "Female").show()
+df.filter(col("gender") !== "Male").show()
+df.filter(df("cc") === 70).show()
+df.filter($"salary" > 286000).select("first_name","email","gender","salary").show()
+df.filter(df("cc").isNull).count()
+df.where(df.col("cc").isNull).count()
+df.withColumn("cc1", when($"cc".isNull, 0).otherwise(1)).filter($"cc1" === 0 ).count()
+df.filter("cc is null").count()
+df.select(avg($"salary")).show()
+df.select(
+    df.col("email"),
+    col("email"),
+    column("email"),
+    'email,
+    $"email",
+    expr("email"))
+  .show(2)
+df.count(distinct("gender")).show
+df.groupBy($"gender").count().show()
+df.filter($"gender" === "").count()
+df.filter($"gender".equalTo("")).count()
+

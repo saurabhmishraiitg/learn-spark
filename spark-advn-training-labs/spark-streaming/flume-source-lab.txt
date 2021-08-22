@@ -1,0 +1,9 @@
+-- The below command will start the Flume agent and listens on 44444 reads the data from the port and kept in the memory. SparkSink reads the data from memory and collects the event waiting on the port 9999
+sudo /usr/lib/flume-ng/bin/flume-ng agent --conf /usr/lib/flume-ng/conf/ -f /home/training/spark-labs/spark-streaming-flume/flume.conf -Dflume.root.logger=DEBUG,console -n agent1
+
+-- Spark Streaming job is submitted. Reads the events from the port 9999.
+spark-submit --class FlumePollingStreamClient --master yarn --deploy-mode cluster --jars /home/training/.ivy2/cache/org.apache.spark/spark-streaming-flume-sink_2.11/jars/spark-streaming-flume-sink_2.11-2.4.4.jar,/home/training/.ivy2/cache/org.apache.spark/spark-streaming-flume_2.11/jars/spark-streaming-flume_2.11-2.4.4.jar,/home/training/.ivy2/cache/org.apache.flume/flume-ng-sdk/jars/flume-ng-sdk-1.6.0.jar,/home/training/.ivy2/cache/org.apache.flume/flume-ng-configuration/jars/flume-ng-configuration-1.6.0.jar,/usr/lib/flume-ng/lib/flume-ng-auth.jar,/home/training/.ivy2/cache/org.apache.flume/flume-ng-core/jars/flume-ng-core-1.6.0.jar  /home/training/spark-labs/workspace/spark-streaming-flume/target/scala-2.11/spark-streaming-flume_2.11-1.0.jar localhost 9999 60
+
+-- Send some data on the port 44444
+{ echo "3"; echo "6"; echo "10";sleep 1; } | telnet localhost 44444
+
