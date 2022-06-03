@@ -17,6 +17,10 @@ This page attempts to list Spark Optimization considerations in Production envir
 
 ## Memory Tuning Parameters/Configuration
 
+- Control the split size for each task
+  - `spark.hadoop.mapreduce.input.fileinputformat.split.maxsize`
+  - `spark.hadoop.mapreduce.input.fileinputformat.split.minsize`
+
 ## Programming Tips
 
 - Use `reduceByKey`, `aggregateByKey`, `combineByKey` **INSTEAD OF** `groupByKey`
