@@ -21,6 +21,6 @@
         <module>spark-fundamentals</module>
         <module>spark-kerberos-connect</module>
         <module>presto-integration</module>
-    <module>spark-structured-streaming</module>
-  </modules>
+        <module>spark-structured-streaming</module>
+    </modules>
 </project>
