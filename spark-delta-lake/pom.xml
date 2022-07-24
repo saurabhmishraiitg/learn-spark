@@ -13,12 +13,19 @@
         <!--        <maven.compiler.source>18</maven.compiler.source>-->
         <!--        <maven.compiler.target>18</maven.compiler.target>-->
         <!--        <java.version>18</java.version>-->
-        <maven.compiler.release.version>16</maven.compiler.release.version>
         <scala.maven.plugin.version>4.7.0</scala.maven.plugin.version>
         <scala.version>2.12.16</scala.version>
+        <scala.major.version>2.12</scala.major.version>
+
+        <maven.compiler.release.version>16</maven.compiler.release.version>
+
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+
+        <delta.lake.core.version>2.0.0</delta.lake.core.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <spark.version>3.3.0</spark.version>
+
         <encoding>UTF-8</encoding>
     </properties>
 
@@ -38,6 +45,20 @@
             <version>${scala.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.delta/delta-core -->
+        <dependency>
+            <groupId>io.delta</groupId>
+            <artifactId>delta-core_${scala.major.version}</artifactId>
+            <version>${delta.lake.core.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_${scala.major.version}</artifactId>
+            <version>${spark.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 
