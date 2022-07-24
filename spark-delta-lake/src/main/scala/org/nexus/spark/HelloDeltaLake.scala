@@ -16,6 +16,8 @@ object HelloDeltaLake extends App with LazyLogging {
     .set("spark.cores.max", "2")
     // Skip _SUCCESS files created when writing to disk
     .set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
+    .set("dfs.client.read.shortcircuit.skip.checksum", "true")
+    .set("spark.sql.parquet.compression.codec", "uncompressed")
 
   lazy val spark = SparkSession
     .builder()
@@ -29,6 +31,6 @@ object HelloDeltaLake extends App with LazyLogging {
 
   // Create a delta lake table
   val data = spark.range(0, 5)
-  data.write.format("delta").save("delta-table")
+  data.write.format("delta").save("output/delta-table")
 
 }
