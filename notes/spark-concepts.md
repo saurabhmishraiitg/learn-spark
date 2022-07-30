@@ -7,6 +7,7 @@ Concepts and Principles for Spark development
     - [Dynamic Allocation](#dynamic-allocation)
     - [`groupByKey`, `reduceByKey`, `aggregateByKey`, `combineByKey`](#groupbykey-reducebykey-aggregatebykey-combinebykey)
     - [Predicate PushDown](#predicate-pushdown)
+    - [Adaptive Query Execution](#adaptive-query-execution)
 
 ## Concepts
 
@@ -56,7 +57,7 @@ Concepts and Principles for Spark development
 
 - [Reference](https://stackoverflow.com/questions/43364432/spark-difference-between-reducebykey-vs-groupbykey-vs-aggregatebykey-vs-combineb)
 - `groupByKey` can cause out of disk problems as data is sent over the network and collected on the reduce workers.
-- `reduceByKey` data are combined at each partition, only one output for one key at each partition to send over the network. 
+- `reduceByKey` data are combined at each partition, only one output for one key at each partition to send over the network.
   - Requires combining all your values into another value with the exact same type.
 - `aggregateByKey` same as reduceByKey, which takes an initial value.
 - `combineByKey` 3 parameters as input
@@ -70,3 +71,10 @@ Concepts and Principles for Spark development
 InputFormat such as `parquet` also support `Predicate Pushdown`
 
 - [Reference](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-Optimizer-PushDownPredicate.html)
+
+### Adaptive Query Execution
+
+- Available from Spark 3.0 onwards
+- It reoptimizes and adjusts query plans based on runtime statistics collected during the execution of the query. So basically during the running of the job, it will use the metrics from completed stages to optimize the next stages
+
+-
