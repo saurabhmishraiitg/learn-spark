@@ -29,8 +29,21 @@ object HelloDeltaLake extends App with LazyLogging {
   //      .config(sparkConf)
   //      .getOrCreate()
 
+  // Dataset
+  // JSON
+  //  val srcFile = sys.env("HOME") + "/_scratch/movielens/movie_dataset_public_final/raw/metadata.json"
+
+  // CSV
+  val srcFilePath = sys.env("HOME") + "/_scratch/movielens/ml-25m/movies.csv"
+
   // Create a delta lake table
-  val data = spark.range(0, 5)
-  data.write.format("delta").save("output/delta-table")
+  val data = spark.read
+    .format("csv")
+    .load(srcFilePath)
+
+  data.show(5)
+  //  data.write.format("delta").save("output/delta-table")
+
+  Thread.sleep(100000)
 
 }

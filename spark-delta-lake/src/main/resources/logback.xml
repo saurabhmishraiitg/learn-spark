@@ -14,8 +14,10 @@
     <!--        </encoder>-->
     <!--    </appender>-->
 
-    <logger name="org.apache" level="WARN" />
-    <logger name="org.spark_project" level="WARN" />
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.junit" level="WARN"/>
+    <logger name="org.spark_project" level="WARN"/>
+    <logger name="org.sparkproject" level="WARN"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

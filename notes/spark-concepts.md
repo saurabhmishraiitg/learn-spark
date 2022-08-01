@@ -76,5 +76,9 @@ InputFormat such as `parquet` also support `Predicate Pushdown`
 
 - Available from Spark 3.0 onwards
 - It reoptimizes and adjusts query plans based on runtime statistics collected during the execution of the query. So basically during the running of the job, it will use the metrics from completed stages to optimize the next stages
-
--
+- Enabled via config property
+  - `spark.sql.adaptive.enabled`
+- 3 types of optimizations enabled by AQE
+  - Coalescing Post-shuffle Partitions that dynamically determine the optimal number of partitions
+  - Converting sort-merge join to Broadcast join, and
+  - Skew Join Optimization
