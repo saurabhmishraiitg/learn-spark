@@ -210,3 +210,16 @@
   - **Wide transformation —** In wide transformation, all the elements that are required to compute the
     records in the single partition may live in many partitions of parent
     RDD. The partition may live in many partitions of parent RDD. *Wide transformations* are the result of *groupbyKey* and *reducebyKey*.
+- **Question** What are the new features introduced in Spark 3.0
+  - Adaptive Query Engine - Optimize queries during runtime based upon statistics collected from previous stages
+    - Coalesce post shuffle partitions to optimal number
+    - sort merge join to Broadcast Join
+    - skew join optimization
+  - Language version upgrades e.g. scala 2.12, python 3, JDK11
+  - New UI for Structured Streaming
+  - Support to read binary files such as images, pdf, zip etc.
+    - Each file is read as single record in DF
+  - Ability to read folders recursively using parameter `recursiveFileLookup`
+  - Support for multi character delimiter e.g. `||`
+  - New built in functions e.g. `sinh`, `cosh`, `make_date` etc.
+  - Added `REPARTITION` hint support for SQL queries
