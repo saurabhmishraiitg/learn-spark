@@ -217,6 +217,7 @@
     - skew join optimization
   - Language version upgrades e.g. scala 2.12, python 3, JDK11
   - New UI for Structured Streaming
+    - This tab displays scheduling delay and processing time for each micro-batch in the data stream, which can be useful for troubleshooting the streaming application
   - Support to read binary files such as images, pdf, zip etc.
     - Each file is read as single record in DF
   - Ability to read folders recursively using parameter `recursiveFileLookup`

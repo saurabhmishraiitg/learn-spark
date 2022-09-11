@@ -18,6 +18,9 @@ object HelloDeltaLake extends App with LazyLogging {
     .set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
     .set("dfs.client.read.shortcircuit.skip.checksum", "true")
     .set("spark.sql.parquet.compression.codec", "uncompressed")
+    .set("spark.eventLog.enabled", "true")
+    .set("spark.history.fs.logDirectory", sys.env("HOME")+"/_tmp/spark-events")
+    .set("spark.eventLog.dir",sys.env("HOME")+"/_tmp/spark-events")
 
   lazy val spark = SparkSession
     .builder()
@@ -33,6 +36,8 @@ object HelloDeltaLake extends App with LazyLogging {
   // JSON
   //  val srcFile = sys.env("HOME") + "/_scratch/movielens/movie_dataset_public_final/raw/metadata.json"
 
+//  logger.info(sparkConf.get("spark.eventLog.dir"))
+
   // CSV
   val srcFilePath = sys.env("HOME") + "/_scratch/movielens/ml-25m/movies.csv"
 
@@ -44,6 +49,6 @@ object HelloDeltaLake extends App with LazyLogging {
   data.show(5)
   //  data.write.format("delta").save("output/delta-table")
 
-  Thread.sleep(100000)
+//  Thread.sleep(10000)
 
 }
