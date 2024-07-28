@@ -4,6 +4,7 @@
 .ipython
 .jupyter/migrated
 .jupyter/nbconfig
+**/.jupyter
 *.ipynb_checkpoints
 
 #Eclipse settings exclusions
