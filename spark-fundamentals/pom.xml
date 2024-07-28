@@ -11,18 +11,16 @@
     <inceptionYear>2020</inceptionYear>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <encoding>UTF-8</encoding>
 
         <!-- Plugin versions -->
         <scalatest.maven.plugin.version>1.0</scalatest.maven.plugin.version>
         <maven.scala.version>4.3.1</maven.scala.version>
 
-        <scala.version>2.11.12</scala.version>
-        <scala.major.version>2.11</scala.major.version>
-
-        <spark.version>2.4.8</spark.version>
+        <scala.version>2.12.19</scala.version>
+        <scala.major.version>2.12</scala.major.version>
+        <spark.version>3.5.0</spark.version>
 
         <!-- Logging libraries -->
         <org.slf4j.version>1.7.5</org.slf4j.version>
@@ -30,13 +28,11 @@
         <logback.classic.version>1.2.13</logback.classic.version>
 
         <!-- Scalatest Version -->
-        <com.holdenkarau.spark.testing.base.version>2.4.8_1.5.3</com.holdenkarau.spark.testing.base.version>
+        <com.holdenkarau.spark.testing.base.version>3.5.1_1.5.3</com.holdenkarau.spark.testing.base.version>
         <scala.test.version>3.3.0-SNAP4</scala.test.version>
 
-        <mysql.connector.version>8.0.28</mysql.connector.version>
-
-        <cloud.bigdataoss.gcs.connector.version>hadoop2-2.2.0</cloud.bigdataoss.gcs.connector.version>
-        <hadoop.mapreduce.version>[3.2.4]</hadoop.mapreduce.version>
+        <cloud.bigdataoss.gcs.connector.version>3.0.0</cloud.bigdataoss.gcs.connector.version>
+        <hadoop.mapreduce.version>3.2.4</hadoop.mapreduce.version>
     </properties>
 
     <dependencies>
@@ -153,12 +149,13 @@
         <!--            <version>1.0.2</version>-->
         <!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.version}</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/com.google.cloud.bigdataoss/gcs-connector -->
         <dependency>
@@ -174,7 +171,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>[${hadoop.mapreduce.version}]</version>
+            <version>${hadoop.mapreduce.version}</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
@@ -191,7 +188,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>[${hadoop.mapreduce.version}</version>
+            <version>${hadoop.mapreduce.version}</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>

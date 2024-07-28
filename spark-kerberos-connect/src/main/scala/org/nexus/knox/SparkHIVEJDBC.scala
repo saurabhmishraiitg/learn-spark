@@ -28,10 +28,12 @@ object SparkHIVEJDBC {
     val username: String = System.getenv("USER")
     val userHome: String = System.getenv("HOME")
 
-    val password: String = new JSONConfLoader(userHome + "/nexus.conf", "org.nexus")
-      .getConfig("spark-kerberos-connect", "password")
-    val hostname : String = new JSONConfLoader(userHome + "/nexus.conf", "org.nexus")
-      .getConfig("spark-kerberos-connect", "hostname")
+    val password: String = new JSONConfLoader().getConfig("spark-kerberos-connect", "password")
+//    (userHome + "/nexus.conf", "org.nexus")
+
+    val hostname : String = new JSONConfLoader().getConfig("spark-kerberos-connect", "hostname")
+//    (userHome + "/nexus.conf", "org.nexus")
+
 
     val port = "8443"
     val database = "default;ssl=true;sslTrustStore=/tmp/d17-gateway.jks;" +
