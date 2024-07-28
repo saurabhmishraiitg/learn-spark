@@ -1,9 +1,10 @@
 package org.nexus.knox_jdbc
 
 import com.typesafe.scalalogging.Logger
-import org.scalatest.{BeforeAndAfter, FlatSpec}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.BeforeAndAfter
 
-class SparkKnoxJDBCIOSpec extends FlatSpec with BeforeAndAfter {
+class SparkKnoxJDBCIOSpec extends AnyFlatSpec with BeforeAndAfter {
 
   // logger
   val logger: Logger = Logger("SparkKnoxJDBCIOSpec")

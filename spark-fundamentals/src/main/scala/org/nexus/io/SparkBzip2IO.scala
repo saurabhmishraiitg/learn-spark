@@ -6,6 +6,7 @@ import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
 import java.io.{BufferedInputStream, BufferedReader, InputStream, InputStreamReader}
 import java.util.stream.Collectors
+import scala.collection.JavaConverters.asScalaIteratorConverter
 
 /**
  * Read Bzip2 file formats
@@ -25,7 +26,7 @@ object SparkBzip2IO extends StrictLogging {
     val fileStr: String = new BufferedReader(new InputStreamReader(bzip2Is)).lines().parallel().collect(Collectors.joining("\n"))
 
     import spark.sqlContext.implicits._
-    val ds: Dataset[String] = spark.createDataset(spark.sparkContext.parallelize(fileStr.stripMargin.lines.toList))
+    val ds: Dataset[String] = spark.createDataset(spark.sparkContext.parallelize(fileStr.stripMargin.lines.iterator().asScala.toList))
 
     spark.read.option("header", value = true).option("inferSchema", value = true).csv(ds)
   }

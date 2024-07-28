@@ -14,18 +14,22 @@
     <inceptionYear>2020</inceptionYear>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
 
         <maven.compiler.version>3.8.1</maven.compiler.version>
+
+        <scala.version>2.12.19</scala.version>
+        <scala.major.version>2.12</scala.major.version>
+        <spark.version>3.5.0</spark.version>
+
         <maven.scala.version>4.3.1</maven.scala.version>
-        <scala.compat.version>2.11</scala.compat.version>
+        <scala.compat.version>2.12</scala.compat.version>
         <maven.assembly.version>3.3.0</maven.assembly.version>
         <scalatest.maven.plugin>1.0</scalatest.maven.plugin>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.version>2.11.7</scala.version>
-        <scalatest.version>3.2.0</scalatest.version>
+
+        <scalatest.version>3.3.0-SNAP4</scalatest.version>
         <scala.logging.version>3.9.2</scala.logging.version>
         <logback.classic.version>1.2.13</logback.classic.version>
     </properties>

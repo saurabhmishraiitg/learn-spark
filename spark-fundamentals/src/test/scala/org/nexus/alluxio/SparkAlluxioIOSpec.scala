@@ -1,9 +1,10 @@
 package org.nexus.alluxio
 
 import com.typesafe.scalalogging.Logger
-import org.scalatest.{BeforeAndAfter, FlatSpec}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.BeforeAndAfter
 
-class SparkAlluxioIOSpec extends FlatSpec with BeforeAndAfter {
+class SparkAlluxioIOSpec extends AnyFlatSpec with BeforeAndAfter {
 
   // logger
   val logger: Logger = Logger("SparkAlluxioIOSpec")
