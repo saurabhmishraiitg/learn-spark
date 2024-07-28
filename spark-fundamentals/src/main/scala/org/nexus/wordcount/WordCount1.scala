@@ -17,8 +17,8 @@ object WordCount1 {
 
     val sparkMaster = "local[*]" //args(0)
     val appName = "word-count" //args(1)
-    val inputFile = "gs://7a6d4d3560ff58c28cef0096a7dbb16086aab77e53cab84d622cbd9794c90d/sect-shop/landing" //args(2)
-    val outputPath = "gs://7a6d4d3560ff58c28cef0096a7dbb16086aab77e53cab84d622cbd9794c90d/sect-shop/landing1" //args(3)
+    val inputFile = "gs://xx/sect-shop/landing" //args(2)
+    val outputPath = "gs://xx/sect-shop/landing1" //args(3)
 
 
     val sparkConf = new SparkConf()
@@ -29,7 +29,7 @@ object WordCount1 {
       .set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
       .set("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
       .set("spark.hadoop.google.cloud.auth.service.account.enable", "true")
-      .set("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/Users/sxxx/Desktop/tmp/gcloud/wmt-ww-gg-gec-dev/svc-gec-gcs-load-2020-12-14.json")
+      .set("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/Users/sxxx/Desktop/tmp/gcloud/xx/svc-xx-gcs-load-2020-12-14.json")
     //      .set("spark.sql.orc.enabled","true")
 
 

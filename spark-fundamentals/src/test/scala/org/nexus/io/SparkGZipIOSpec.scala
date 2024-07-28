@@ -30,7 +30,7 @@ class SparkGZipIOSpec extends BaseSpec {
   }
 
   "loading a gzip file from GCS" should "succeed" in {
-    val gcsFilePathStr: String = "gs://60ae874b3f3f3382c1acff2345b3f5e8cb82af668b63c043f66dd9f95d7f18/sxxx/loans_data.csv.gz"
+    val gcsFilePathStr: String = "gs://xx/sxxx/loans_data.csv.gz"
 
     val gcsFilePath: Path = new Path(gcsFilePathStr)
     val fs: FileSystem = gcsFilePath.getFileSystem(spark.sparkContext.hadoopConfiguration)

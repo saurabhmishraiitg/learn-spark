@@ -14,7 +14,7 @@ Commonly used syntax examples/snippets in both Python/Scala
 ## General
 
 - Provide `log4j.properties` file at runtime for `spark-shell`/`spark-sql`
-  
+
   ```bash
   spark-sql --files <file_path>/log4j.properties --conf "spark.executor.extraJavaOptions='-Dlog4j.configuration=log4j.properties'" --driver-java-options "-Dlog4j.configuration=file:<file_path>/log4j.properties"
   ```
@@ -46,7 +46,7 @@ Commonly used syntax examples/snippets in both Python/Scala
 
   ```scala
   user="username"
-  url="jdbc:db2://XXXX.wal-mart.com:59884/XXX:securityMechanism=18;sslConnection=true;sslKeyStoreLocation=<path-to-file>/ssl/DB2SNKUS.sp01.wal-mart.com.pfx;sslKeyStorePassword=<<password>>;sslKeyStoreType=PKCS12;sslTrustStoreLocation=<path-to-file>/ssl/DB2SNKUS.sp01.wal-mart.com.jks;"
+  url="jdbc:db2://XXXX.xxx-xxx.com:59884/XXX:securityMechanism=18;sslConnection=true;sslKeyStoreLocation=<path-to-file>/ssl/XXX.sp01.xxx-xxx.com.pfx;sslKeyStorePassword=<<password>>;sslKeyStoreType=PKCS12;sslTrustStoreLocation=<path-to-file>/ssl/XXX.sp01.xxx-xxx.com.jks;"
   prop = {"user": user, "driver": "com.ibm.db2.jcc.DB2Driver", "ssl": "true", "sslmode" : "require"}
   table = "DPSTTHRT.TABLE_NAME"
   df = spark.read.jdbc(url=url, table=table, properties=prop)

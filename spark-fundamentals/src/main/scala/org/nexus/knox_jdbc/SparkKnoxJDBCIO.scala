@@ -36,7 +36,7 @@ object SparkKnoxJDBCIO {
     logger.info(s"username [${username}], password [${password}]")
 
     val jdbcDF = spark.read.format("jdbc")
-      .option("url", "jdbc:hive2://knox-prod17.wal-mart.com:8443/default;ssl=true;sslTrustStore=/Users/sxxx/tmp/cluster/p17/p17-gateway.jks;trustStorePassword=12345678;hive.security.authorization.enabled=false;transportMode=http;httpPath=gateway/PROD17/hive")
+      .option("url", "jdbc:hive2://knox-prod17.xxx-xx.com:8443/default;ssl=true;sslTrustStore=/Users/sxxx/tmp/cluster/p17/p17-gateway.jks;trustStorePassword=12345678;hive.security.authorization.enabled=false;transportMode=http;httpPath=gateway/PROD17/hive")
       .option("driver", "org.apache.hive.jdbc.HiveDriver")
       //      .option("dbtable", "sxxx.gg_reach_us_reg_cntct")
       .option("dbtable", tableName)

@@ -21,9 +21,9 @@ object SampleSparkSQLETLJob extends App {
   val exec_cnt = args(2)
   val exec_core_cnt = args(3)
 
-  val source_table = "wmt_ww_gg_reach_highsecure_poc.sample_data_generator_03_encrypt"
-  val output_table_1 = "wmt_ww_gg_reach_highsecure_poc.sample_data_age_distribution_01"
-  val output_table_2 = "wmt_ww_gg_reach_highsecure_poc.sample_data_year_distribution_01"
+  val source_table = "xxx.sample_data_generator_03_encrypt"
+  val output_table_1 = "xxx.sample_data_age_distribution_01"
+  val output_table_2 = "xxx.sample_data_year_distribution_01"
 
   val sparkConf = new SparkConf()
     .setMaster(yarn_mode)

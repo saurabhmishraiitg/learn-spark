@@ -26,7 +26,7 @@ object SparkJDBCHiveKnox extends App {
     .set("spark.executor.instances", exec_cnt)
     .set("spark.executor.cores", exec_core_cnt)
 
-  val encryptedJDBCPassword = "ATOYlmTmAkvR+pbJ3bPSIvHNS8gBEnwGc6Qj84qxRtC9RBGdKE4THcPXU13H4wfi"
+  val encryptedJDBCPassword = "xxx"
   val jdbcPassword = TinkEncryptDecrypt.deEncryptData(encryptedJDBCPassword)
 
   val spark = SparkSession
@@ -42,9 +42,9 @@ object SparkJDBCHiveKnox extends App {
 
   //  Class.forName("org.apache.hive.jdbc.HiveDriver") // Databricks Runtime 3.4 and above
 
-  val jdbcHostname = "knox-prod17.wal-mart.com"
+  val jdbcHostname = "knox-prod17.xxx-xx.com"
   val jdbcPort = 8443
-  val jdbcDatabase = "default;ssl=true;sslTrustStore=/tmp/p17-gateway.jks;trustStorePassword=naruto;" +
+  val jdbcDatabase = "default;ssl=true;sslTrustStore=/tmp/p17-gateway.jks;trustStorePassword=xxx;" +
     "hive.security.authorization.enabled=false;transportMode=http;httpPath=gateway/PROD17/hive"
 
   // Create the JDBC URL without passing in the user and password parameters.
@@ -72,8 +72,8 @@ object SparkJDBCHiveKnox extends App {
     .option("password", jdbcPassword).load()
 
   //  val jdbcDF = spark.read.format("jdbc").
-  //    option("url", "jdbc:hive2://tstr401144.homeoffice.wal-mart.com:10000/;principal=hive/_HOST@HADOOP_DEV17.WAL-MART.COM")
-  //    .option("dbtable", "ww_hr_dl_us_core_nonsecure.hr_assoc_meal_excpt").option("fetchsize", "10000").load
+  //    option("url", "jdbc:hive2://xxx.homeoffice.xxx-xx.com:10000/;principal=hive/_HOST@HADOOP_DEV17.xxx-xx.COM")
+  //    .option("dbtable", "xx.hr_assoc_meal_excpt").option("fetchsize", "10000").load
 
   jdbcDF.printSchema()
   jdbcDF.createTempView("entity")
