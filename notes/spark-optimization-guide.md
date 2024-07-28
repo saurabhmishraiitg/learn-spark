@@ -33,7 +33,7 @@ This page attempts to list Spark Optimization considerations in Production envir
 - Enable dynamic memory allocation for your job >> [Dynamic Execution](spark-concepts.md#dynamic-allocation)
 - Broadcast large variables to reduce the serialized task size
 - Do not copy ALL elements of a large RDD to the driver
-- `UDF`'s are Blackbox — Don’t Use Them Unless You’ve Got No Choice
+- `UDF`'s are Blackbox — Don't Use Them Unless You've Got No Choice
   - When using UDFs `Catalyst` is unable to implement optimizations such as Predicate Pushdown, Constant Folding etc. on the data -> [Reference](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-udfs-blackbox.html)
   - [Comparison](https://stackoverflow.com/a/49103325/5679728)
 - Check that your queries are leveraging `Predicate Pushdown` >> [Predicate Pushdown](spark-concepts.md#predicate-pushdown)

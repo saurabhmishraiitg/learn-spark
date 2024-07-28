@@ -67,7 +67,7 @@ Concepts and Principles for Spark development
 
 ### Predicate PushDown
 
-`Predicate Pushdown` aims at pushing down the filtering to the `bare metal`, i.e. a data source engine. That is to increase the performance of queries since the filtering is performed at the very low level rather than dealing with the entire dataset after it has been loaded to Spark’s memory and perhaps causing memory issues.
+`Predicate Pushdown` aims at pushing down the filtering to the `bare metal`, i.e. a data source engine. That is to increase the performance of queries since the filtering is performed at the very low level rather than dealing with the entire dataset after it has been loaded to Spark's memory and perhaps causing memory issues.
 InputFormat such as `parquet` also support `Predicate Pushdown`
 
 - [Reference](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-Optimizer-PushDownPredicate.html)
@@ -80,7 +80,7 @@ InputFormat such as `parquet` also support `Predicate Pushdown`
   - `spark.sql.adaptive.enabled`
 - 3 types of optimizations enabled by AQE
   - Coalescing Post-shuffle Partitions that dynamically determine the optimal number of partitions
-    - AQE now combines small partitions together so that users don’t need to worry too much about shuffle partitions since this will now be dynamically adjusted in runtime
+    - AQE now combines small partitions together so that users don't need to worry too much about shuffle partitions since this will now be dynamically adjusted in runtime
   - Converting sort-merge join to Broadcast join, and
   - Skew Join Optimization
     - AQE automatically breaks down partitions into smaller ones once data skewness is detected

@@ -7,7 +7,7 @@ import org.apache.spark.SparkContext
  * In this code we demonstrate how to use 'pipe' transformation.
  * Pipe operator in Spark, allows developer to process RDD data using external applications.
  * Sometimes in data analysis, we need to use an external library which may not be written using Java/Scala.
- * Ex: Fortran math libraries. In that case, spark’s pipe operator allows us to
+ * Ex: Fortran math libraries. In that case, spark's pipe operator allows us to
  * send the RDD data to the external application.
  * ref: http://blog.madhukaraphatak.com/pipe-in-spark/
  */

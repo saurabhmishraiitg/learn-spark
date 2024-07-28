@@ -343,7 +343,7 @@ spark.executor.instances (--num-executor   ->  deprecated now due to dynamic all
   - In `cluster mode`, the Spark driver runs inside an application master process which is managed by YARN on the cluster, and the client can go away after initiating the application.
   - In `client mode`, the driver runs in the client process, and the application master is only used for requesting resources from YARN.
   - In `cluster mode`, the client will periodically poll the Application Master for status updates and display them in the console. The client will exit once your application has finished running
-  - In `cluster mode`, the driver runs on a different machine than the client, so `SparkContext.addJar` won’t work out of the box with files that are local to the client. To make files on the client available to `SparkContext.addJar`, include them with the `--jars` option in the launch command.
+  - In `cluster mode`, the driver runs on a different machine than the client, so `SparkContext.addJar` won't work out of the box with files that are local to the client. To make files on the client available to `SparkContext.addJar`, include them with the `--jars` option in the launch command.
 
 - **Difference b/w spark operations of cogroup and join**
   - Join is same as relational database operation of INNER JOIN. Only the keys common to both RDDs would be part of the final output RDD
