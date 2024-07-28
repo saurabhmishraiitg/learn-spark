@@ -3,4 +3,4 @@ val df = spark.read.option("header",true).option("inferschema",true)\
 
 df.printSchema()df.registerTempTable("applestock")
 spark.sql("select * from applestock").show()
-spark.sql("select * from applestock”).count()
+spark.sql("select * from applestock").count()
