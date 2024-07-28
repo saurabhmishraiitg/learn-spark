@@ -35,7 +35,7 @@ Aim of this work is to
     val jdbcDF = spark.read
       .format("jdbc")
       //.option("driver","com.mysql.jdbc.Driver")
-      .option("url", "jdbc:mysql://rch.prod.reach-prod.ms-df-cloudrdbms.prod.walmart.com:3306?tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull")
+      .option("url", "jdbc:mysql://rch.prod.reach-prod.ms-df-cloudrdbms.prod.wxxx.com:3306?tinyInt1isBit=false&zeroDateTimeBehavior=convertToNull")
       //.option("dbtable", "reach.tasks") //Use either query or dbtable option
       .option("query", "select * from reach.tasks limit 10")
       .option("user", "xxx")

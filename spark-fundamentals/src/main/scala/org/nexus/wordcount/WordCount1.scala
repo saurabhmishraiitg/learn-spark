@@ -29,7 +29,7 @@ object WordCount1 {
       .set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "false")
       .set("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
       .set("spark.hadoop.google.cloud.auth.service.account.enable", "true")
-      .set("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/Users/s0m0158/Desktop/tmp/gcloud/wmt-ww-gg-gec-dev/svc-gec-gcs-load-2020-12-14.json")
+      .set("spark.hadoop.google.cloud.auth.service.account.json.keyfile", "/Users/sxxx/Desktop/tmp/gcloud/wmt-ww-gg-gec-dev/svc-gec-gcs-load-2020-12-14.json")
     //      .set("spark.sql.orc.enabled","true")
 
 

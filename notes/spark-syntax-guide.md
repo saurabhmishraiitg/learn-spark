@@ -20,7 +20,7 @@ Commonly used syntax examples/snippets in both Python/Scala
   ```
 
 - Provide external jars to `spark-shell` context
-  `export SPARK_CLASSPATH=$SPARK_CLASSPATH:/u/users/s0m0158/mysql-connector-java-5.1.40-bin.jar`
+  `export SPARK_CLASSPATH=$SPARK_CLASSPATH:/u/users/sxxx/mysql-connector-java-5.1.40-bin.jar`
 - Increase driver memory for `spark-shell`, `spark-sql` to avoid failure in case big joins
   - `spark-shell --driver-memory 4g`
   - `spark-sql --driver-memory 4g`
@@ -40,7 +40,7 @@ Commonly used syntax examples/snippets in both Python/Scala
   - Setting the log file to control the log verbosity
   - Setting runtime jar files
     - If you want to add jars after spark-shell is started then use the following command
-      - `:require /home/s0m0158/gg-gcp-common.jar`
+      - `:require /home/sxxx/gg-gcp-common.jar`
   - `spark-shell --files /u/users/$USER/log4j.properties --master yarn --deploy-mode client --driver-java-options \"-Dlog4j.configuration=file:/u/users/$USER/log4j.properties\" --driver-memory 4g --name \"spark-shell-debug\" --queue ggdataload --jars "comma,seprated,jars`
 - `CONNECT` to DB2
 

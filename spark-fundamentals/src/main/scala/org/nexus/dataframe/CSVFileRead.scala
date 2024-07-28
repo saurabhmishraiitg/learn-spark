@@ -28,7 +28,7 @@ object CSVFileRead {
       //Auto infer the schema of the dataframe based upon columns encountered
       .option("inferSchema", "true")
       .option("escape", "\"")
-      .csv("/Users/s0m0158/Desktop/contacts.csv")
+      .csv("/Users/sxxx/Desktop/contacts.csv")
 
     // Print top n records from the DataFrame
     dfCSV.show(10, truncate = true)

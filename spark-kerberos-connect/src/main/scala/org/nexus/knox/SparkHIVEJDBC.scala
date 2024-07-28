@@ -43,7 +43,7 @@ object SparkHIVEJDBC {
       .option("url", s"jdbc:hive2://${hostname}:${port}/${database}")
       //      .option("driver", "com.mysql.jdbc.Driver")
       .option("driver", "org.apache.hive.jdbc.HiveDriver")
-      //            .option("dbtable", "(select col1, col2 from s0m0158.test01) test") // Working
+      //            .option("dbtable", "(select col1, col2 from sxxx.test01) test") // Working
       .option("dbtable", s"$username.test01") // Working
       .option("fetchsize", "10") // Needed to fix empty dataframe issue
       .option("user", username)

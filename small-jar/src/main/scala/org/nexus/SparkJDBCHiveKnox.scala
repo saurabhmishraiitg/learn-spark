@@ -50,7 +50,7 @@ object SparkJDBCHiveKnox extends App {
   // Create the JDBC URL without passing in the user and password parameters.
   val jdbcUrl = s"jdbc:hive2://${jdbcHostname}:${jdbcPort}/${jdbcDatabase}"
 
-  val jdbcUsername = "s0m0158"
+  val jdbcUsername = "sxxx"
 
   //  val connection = DriverManager.getConnection(jdbcUrl, jdbcUsername, jdbcPassword)
   //  val connectionProperties = new Properties()

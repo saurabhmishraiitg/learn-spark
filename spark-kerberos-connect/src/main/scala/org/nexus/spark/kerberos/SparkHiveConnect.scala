@@ -85,7 +85,7 @@ object SparkHiveConnect {
     // spark.catalog.listTables.filter($"name" === "t1").show
     // val t3Tid = spark.sessionState.sqlParser.parseTableIdentifier("user.gg_reach_fire_watch")
     // val t3Metadata = spark.sessionState.catalog.getTempViewOrPermanentTableMetadata(t3Tid)
-    // spark.catalog.listTables("s0m0158")
+    // spark.catalog.listTables("sxxx")
     // import org.apache.spark.sql.catalyst.TableIdentifier
     // val v2 = TableIdentifier(table = "test01", database = Some("user"))
     // val metastore = spark.sharedState.externalCatalog
@@ -93,6 +93,6 @@ object SparkHiveConnect {
     // import spark.sessionState.{catalog => c}
     // val tmeta = c.getTableMetadata(v2)
 
-    spark.sql("select * from s0m0158.test01").show()
+    spark.sql("select * from sxxx.test01").show()
   }
 }
