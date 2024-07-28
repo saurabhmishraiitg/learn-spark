@@ -27,7 +27,7 @@
         <scala.version>2.11.7</scala.version>
         <scalatest.version>3.2.0</scalatest.version>
         <scala.logging.version>3.9.2</scala.logging.version>
-        <logback.classic.version>1.2.3</logback.classic.version>
+        <logback.classic.version>1.2.13</logback.classic.version>
     </properties>
 
     <packaging>jar</packaging>

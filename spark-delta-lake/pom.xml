@@ -28,7 +28,7 @@
         <scala.logging.version>3.9.5</scala.logging.version>
         <delta.lake.core.version>2.0.0</delta.lake.core.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <logback.classic.version>1.2.11</logback.classic.version>
+        <logback.classic.version>1.2.13</logback.classic.version>
 
         <encoding>UTF-8</encoding>
     </properties>
