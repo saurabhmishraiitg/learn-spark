@@ -5,7 +5,7 @@ import java.util.Properties
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
-import org.nexus.utils.TinkEncryptDecrypt
+//import org.nexus.utils.TinkEncryptDecrypt
 
 /**
  * Read from Hive Knox connection using Spark JDBC
@@ -27,7 +27,8 @@ object SparkJDBCHiveKnox extends App {
     .set("spark.executor.cores", exec_core_cnt)
 
   val encryptedJDBCPassword = "xxx"
-  val jdbcPassword = TinkEncryptDecrypt.deEncryptData(encryptedJDBCPassword)
+//  val jdbcPassword = TinkEncryptDecrypt.deEncryptData(encryptedJDBCPassword)
+  val jdbcPassword = "xxx"
 
   val spark = SparkSession
     .builder()
