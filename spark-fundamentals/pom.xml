@@ -22,7 +22,7 @@
         <scala.version>2.11.12</scala.version>
         <scala.major.version>2.11</scala.major.version>
 
-        <spark.version>2.4.7</spark.version>
+        <spark.version>2.4.8</spark.version>
 
         <!-- Logging libraries -->
         <org.slf4j.version>1.7.5</org.slf4j.version>
@@ -30,8 +30,8 @@
         <logback.classic.version>1.2.3</logback.classic.version>
 
         <!-- Scalatest Version -->
-        <scala.test.version>3.0.9</scala.test.version>
         <com.holdenkarau.spark.testing.base.version>2.4.8_1.5.3</com.holdenkarau.spark.testing.base.version>
+        <scala.test.version>3.3.0-SNAP4</scala.test.version>
 
         <mysql.connector.version>8.0.22</mysql.connector.version>
 
@@ -215,7 +215,7 @@
         <dependency>
             <groupId>org.alluxio</groupId>
             <artifactId>alluxio-shaded-client</artifactId>
-            <version>2.4.0</version>
+            <version>313</version>
             <scope>provided</scope>
         </dependency>
 
