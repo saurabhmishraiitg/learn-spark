@@ -31,7 +31,7 @@
 
         <!-- Scalatest Version -->
         <scala.test.version>3.0.9</scala.test.version>
-        <com.holdenkarau.spark.testing.base.version>2.4.5_0.14.0</com.holdenkarau.spark.testing.base.version>
+        <com.holdenkarau.spark.testing.base.version>2.4.8_1.5.3</com.holdenkarau.spark.testing.base.version>
 
         <mysql.connector.version>8.0.22</mysql.connector.version>
 
