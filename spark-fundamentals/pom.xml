@@ -24,7 +24,7 @@
 
         <!-- Logging libraries -->
         <org.slf4j.version>1.7.5</org.slf4j.version>
-        <scala.logging.version>3.9.2</scala.logging.version>
+        <scala.logging.version>3.9.5</scala.logging.version>
         <logback.classic.version>1.2.13</logback.classic.version>
 
         <!-- Scalatest Version -->
