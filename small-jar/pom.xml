@@ -15,7 +15,7 @@
         <encoding>UTF-8</encoding>
         <scala.version>2.12.19</scala.version>
         <scala.compat.version>2.12</scala.compat.version>
-        <spark.version>3.5.0</spark.version>
+        <spark.version>3.5.1</spark.version>
     </properties>
 
     <dependencies>

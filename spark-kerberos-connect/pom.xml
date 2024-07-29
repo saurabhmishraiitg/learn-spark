@@ -14,7 +14,7 @@
     <hadoop.version>3.3.3</hadoop.version>
     <scala.version>2.12.19</scala.version>
     <scala.compat.version>2.12</scala.compat.version>
-    <spark.version>3.5.0</spark.version>
+    <spark.version>3.5.1</spark.version>
 
     <scala.logging.version>3.9.2</scala.logging.version>
     <logback.classic.version>1.2.13</logback.classic.version>
