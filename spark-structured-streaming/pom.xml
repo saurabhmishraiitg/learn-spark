@@ -25,7 +25,7 @@
         <maven.scala.version>4.3.1</maven.scala.version>
         <scala.compat.version>2.12</scala.compat.version>
         <maven.assembly.version>3.3.0</maven.assembly.version>
-        <scalatest.maven.plugin>1.0</scalatest.maven.plugin>
+        <scalatest.maven.plugin>2.2.0</scalatest.maven.plugin>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
