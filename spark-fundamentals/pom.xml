@@ -31,7 +31,7 @@
         <com.holdenkarau.spark.testing.base.version>3.5.1_1.5.3</com.holdenkarau.spark.testing.base.version>
         <scala.test.version>3.3.0-SNAP4</scala.test.version>
 
-        <cloud.bigdataoss.gcs.connector.version>3.0.0</cloud.bigdataoss.gcs.connector.version>
+        <cloud.bigdataoss.gcs.connector.version>3.0.1</cloud.bigdataoss.gcs.connector.version>
         <hadoop.mapreduce.version>3.2.4</hadoop.mapreduce.version>
     </properties>
 
