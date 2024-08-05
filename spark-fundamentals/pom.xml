@@ -32,7 +32,7 @@
         <scala.test.version>3.3.0-SNAP4</scala.test.version>
 
         <cloud.bigdataoss.gcs.connector.version>3.0.0</cloud.bigdataoss.gcs.connector.version>
-        <hadoop.mapreduce.version>3.2.4</hadoop.mapreduce.version>
+        <hadoop.mapreduce.version>3.4.0</hadoop.mapreduce.version>
     </properties>
 
     <dependencies>
