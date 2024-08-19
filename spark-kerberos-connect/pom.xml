@@ -17,7 +17,7 @@
     <spark.version>3.5.1</spark.version>
 
     <scala.logging.version>3.9.5</scala.logging.version>
-    <logback.classic.version>1.2.13</logback.classic.version>
+    <logback.classic.version>1.5.7</logback.classic.version>
   </properties>
 
   <dependencies>
