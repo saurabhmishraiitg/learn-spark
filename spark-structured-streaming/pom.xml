@@ -31,7 +31,7 @@
 
         <scalatest.version>3.3.0-SNAP4</scalatest.version>
         <scala.logging.version>3.9.5</scala.logging.version>
-        <logback.classic.version>1.2.13</logback.classic.version>
+        <logback.classic.version>1.5.8</logback.classic.version>
     </properties>
 
     <packaging>jar</packaging>
