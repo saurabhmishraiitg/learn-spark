@@ -25,7 +25,7 @@
         <!-- Logging libraries -->
         <org.slf4j.version>1.7.5</org.slf4j.version>
         <scala.logging.version>3.9.5</scala.logging.version>
-        <logback.classic.version>1.2.13</logback.classic.version>
+        <logback.classic.version>1.5.11</logback.classic.version>
 
         <!-- Scalatest Version -->
         <com.holdenkarau.spark.testing.base.version>3.5.1_1.5.3</com.holdenkarau.spark.testing.base.version>
